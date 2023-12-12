@@ -152,6 +152,41 @@ body {
         text-decoration: underline;
     }
 
+    h2 {
+
+        span {
+            width: 200px;
+            height: 100px;
+            position: relative;
+        }
+
+        #role:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color-navy;
+            border-left: 2px solid $color-yellow;
+            animation: animate 4s steps(12) infinite;
+        }
+
+        @keyframes animate {
+
+            40%,
+            60% {
+                left: 100%
+            }
+
+            100% {
+                left: 0%
+            }
+        }
+    }
+
+
+
     a {
         background-color: $color-cream;
         border-radius: 50%;
