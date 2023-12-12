@@ -20,13 +20,21 @@ body {
   color: #fff;
 }
 
+.container {
+  height: 100vh;
+  width: 100vw;
+}
 .container .wrapper {
   max-width: 1200px;
   margin: auto;
   padding: 2rem;
 }
+.container .wrapper:first-of-type {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .container .wrapper .home {
-  padding-top: 4rem;
+  padding-top: 5rem;
   padding-bottom: 7rem;
   display: flex;
   flex-direction: column-reverse;
@@ -94,7 +102,7 @@ body {
 }
 @media screen and (min-width: 1024px) {
   .container header {
-    top: 600px;
+    top: 550px;
     position: relative;
     align-items: center;
     height: 50px;
@@ -199,7 +207,7 @@ body {
 }
 
 footer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 0;
 }
 footer p {
