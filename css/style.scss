@@ -99,6 +99,7 @@ body {
         #active {
             font-weight: bold;
             text-decoration: underline;
+            pointer-events: none;
         }
 
         a.hamburger {

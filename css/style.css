@@ -88,6 +88,7 @@ body {
 .container header #active {
   font-weight: bold;
   text-decoration: underline;
+  pointer-events: none;
 }
 .container header a.hamburger {
   display: block;
