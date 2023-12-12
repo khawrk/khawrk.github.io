@@ -138,6 +138,10 @@ html {
                         list-style: none;
                         margin: auto;
 
+                        &:hover {
+                            font-weight: bold;
+                        }
+
                         &:first-of-type {
                             @media screen and (min-width:$desktop) {
                                 margin-left: 11rem;

@@ -130,14 +130,18 @@ body {
             display: none;
 
 
+
             @media screen and (min-width:$desktop) {
                 display: flex;
                 gap: 1rem;
-
             }
 
             li {
                 list-style: none;
+
+                &:hover {
+                    font-weight: bold;
+                }
             }
 
             a {
@@ -190,6 +194,11 @@ body {
     a {
         background-color: $color-cream;
         border-radius: 50%;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1.2);
+        }
 
     }
 
