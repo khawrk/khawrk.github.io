@@ -504,6 +504,7 @@ html {
 }
 .project-page .container .wrapper {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .project-page .container .wrapper header.nav > p#name {
   display: block;
@@ -877,6 +878,7 @@ html {
 }
 .workExp-page .container .wrapper {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .workExp-page .container .wrapper header.nav > p#name {
   display: block;
