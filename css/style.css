@@ -502,6 +502,9 @@ html {
 .project-page .container .project .project__image img {
   max-width: 100%;
 }
+.project-page .container .wrapper {
+  padding-top: 2rem;
+}
 .project-page .container .wrapper header.nav > p#name {
   display: block;
   color: black;
@@ -871,6 +874,9 @@ html {
 }
 .workExp-page .container .work-experience .mainExp > li p {
   margin-bottom: 0;
+}
+.workExp-page .container .wrapper {
+  padding-top: 2rem;
 }
 .workExp-page .container .wrapper header.nav > p#name {
   display: block;
