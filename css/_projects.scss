@@ -40,15 +40,17 @@ html {
                 background-color: $color-navy;
                 padding-left: 1rem;
                 padding-right: 1rem;
-                height: 320px;
+                height: 100%;
+                margin-bottom: 1.5rem;
 
                 @media screen and (min-width:$desktop) {
-                    height: auto;
+                    height: 100%;
                     width: auto;
                 }
 
                 p {
                     padding-bottom: 1rem;
+
                 }
 
                 a {
@@ -67,6 +69,7 @@ html {
                 background-color: $color-cream;
                 border-radius: 20px;
                 padding: 2rem;
+                margin: auto;
 
                 @media screen and (min-width:$desktop) {
                     display: flex;

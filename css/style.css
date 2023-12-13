@@ -464,11 +464,12 @@ html {
   background-color: #1B263B;
   padding-left: 1rem;
   padding-right: 1rem;
-  height: 320px;
+  height: 100%;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .project-page .container .project .project__text {
-    height: auto;
+    height: 100%;
     width: auto;
   }
 }
@@ -489,6 +490,7 @@ html {
   background-color: #D9D9D9;
   border-radius: 20px;
   padding: 2rem;
+  margin: auto;
 }
 @media screen and (min-width: 1024px) {
   .project-page .container .project .project__image {
