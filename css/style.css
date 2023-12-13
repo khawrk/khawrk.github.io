@@ -452,6 +452,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 1024px) {
   .project-page .container .project {
@@ -482,6 +483,7 @@ html {
   background-color: #fff;
   text-decoration: none;
   color: black;
+  margin-right: 1rem;
 }
 .project-page .container .project .project__image {
   background-color: #D9D9D9;

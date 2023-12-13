@@ -28,6 +28,7 @@ html {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            margin-bottom: 2rem;
 
             @media screen and (min-width:$desktop) {
                 display: grid;
@@ -58,6 +59,7 @@ html {
                     background-color: $color-white;
                     text-decoration: none;
                     color: $color-black;
+                    margin-right: 1rem;
                 }
             }
 
