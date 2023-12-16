@@ -1,5 +1,4 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = 0;
 
 // Next/previous controls
 function plusSlides(n) {
@@ -26,3 +25,5 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+showSlides(slideIndex);

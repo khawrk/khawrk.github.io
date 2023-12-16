@@ -39,49 +39,41 @@
                     technology, and data. Guided by passion and relentless curiosity, I participated in various courses
                     and intensive bootcamps.</p>
                 <h3>Certificates</h3>
-                <br>
-                <!-- Slideshow container -->
-                <div class="certificates">
-                    <div class="slideshow-container">
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides fade">
-                            <div class="numbertext">1 / 4</div>
-                            <img src="../images/Data-Alchemist-Certificate.png" style="width:100%">
-                            <div class="text">Blockchain Data Analyst</div>
+                <!-- GlideJs -->
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <img src="../images/Data-Alchemist-Certificate.png" style="width:100%">
+                                <div class="text">Blockchain Data Analyst</div>
+                            </li>
+                            <li class="glide__slide">
+                                <img src="../images/DataRockie School - Certified Professional Data Analyst - 2023-03-05.png"
+                                    style="width:100%">
+                                <div class="text">Certified Professional Data Analyst</div>
+                            </li>
+                            <li class="glide__slide"><img src="../images/Intermediate-SQL-for-Product-Managers.png"
+                                    style="width:100%">
+                                <div class="text">Intermediate SQL</div>
+                            </li>
+                            <li class="glide__slide">
+                                <img src="../images/Nas_Academy_How_to_launch_an_NFT_project.png" style="width:100%">
+                                <div class="text">How to Launch an NFT Project</div>
+                            </li>
+                        </ul>
+                        <!-- Controlling buttons -->
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
                         </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext">2 / 4</div>
-                            <img src="../images/DataRockie School - Certified Professional Data Analyst - 2023-03-05.png"
-                                style="width:100%">
-                            <div class="text">Certified Professional Data Analyst</div>
+                        <!-- Bullets -->
+                        <div class="glide__bullets" data-glide-el="controls[nav]">
+                            <button class="glide__bullet" data-glide-dir="=0"></button>
+                            <button class="glide__bullet" data-glide-dir="=1"></button>
+                            <button class="glide__bullet" data-glide-dir="=2"></button>
                         </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext">3 / 4</div>
-                            <img src="../images/Intermediate-SQL-for-Product-Managers.png" style="width:100%">
-                            <div class="text">Intermediate SQL</div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext">4 / 4</div>
-                            <img src="../images/Nas_Academy_How_to_launch_an_NFT_project.png" style="width:100%">
-                            <div class="text">How to Launch an NFT Project</div>
-                        </div>
-
-                        <!-- Next and previous buttons -->
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
-                    <br>
-
-                    <!-- The dots/circles -->
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
-                </div>
+                </div> <br>
             </div>
             <div class="wrapper">
                 <h3>Languages, Tools, and Databases </h3>
@@ -117,6 +109,15 @@
             </footer>
         </div>
     </div>
+    <script src="https://unpkg.com/@glidejs/glide@3.6.0/dist/glide.js"></script>
+    <script>
+        new Glide('.glide', {
+            type: "carousel",
+            perView: 2,
+            autoplay: 2000,
+            hoverpause: true
+        }).mount()
+    </script>
 </body>
 
 </html>

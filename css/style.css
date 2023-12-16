@@ -597,17 +597,6 @@ img {
   max-width: 1100px;
   margin: auto;
 }
-.skill-page .container {
-  /* Slideshow container */
-  /* Hide the images by default */
-  /* Next & previous buttons */
-  /* Position the "next button" to the right */
-  /* On hover, add a black background color with a little bit see-through */
-  /* Caption text */
-  /* Number text (1/3 etc) */
-  /* The dots/bullets/indicators */
-  /* Fading animation */
-}
 .skill-page .container .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -708,45 +697,40 @@ img {
 .skill-page .container .language-tool a {
   background-color: transparent;
 }
-.skill-page .container .slideshow-container {
-  max-width: 500px;
-  height: 500px;
+.skill-page .container .glide {
+  width: 100%;
+  height: 100%;
+  background-color: none;
   position: relative;
-  margin: auto;
 }
-.skill-page .container .certificates {
-  height: 500px;
+.skill-page .container .glide .glide__track {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
-.skill-page .container .mySlides {
-  display: none;
+.skill-page .container .glide .glide__slides {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
 }
-.skill-page .container .prev,
-.skill-page .container .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+.skill-page .container .glide .glide__slides li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
-.skill-page .container .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.skill-page .container .glide .glide__slides li img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 2rem;
 }
-.skill-page .container .prev:hover,
-.skill-page .container .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.skill-page .container .text {
+.skill-page .container .glide .glide__slides li .text {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
@@ -755,38 +739,28 @@ img {
   width: 100%;
   text-align: center;
 }
-.skill-page .container .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
+.skill-page .container .glide .glide__arrows {
   position: absolute;
-  top: 0;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
-.skill-page .container .dot {
+.skill-page .container .glide .glide__bullets {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.skill-page .container .glide .glide__bullets button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: none;
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
 }
-.skill-page .container .active,
-.skill-page .container .dot:hover {
-  background-color: #717171;
-}
-.skill-page .container .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+.skill-page .container .glide .glide__bullets button:hover {
+  background-color: #D9D9D9;
 }
 
 * {
