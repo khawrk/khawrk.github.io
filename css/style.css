@@ -1050,6 +1050,10 @@ html {
 .contact-page .contact-detail .contact-detail__icons i {
   color: #1B263B;
 }
+.contact-page .contactForm {
+  display: flex;
+  justify-content: center;
+}
 .contact-page .wrapper > footer {
   position: relative;
   top: 250px;

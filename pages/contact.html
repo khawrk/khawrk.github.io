@@ -9,6 +9,9 @@
     <link rel="icon" type="image/png" href="../images/EmojiHtmlIcon.png" sizes="32x32">
     <script src="https://kit.fontawesome.com/9684f61028.js" crossorigin="anonymous"></script>
     <script src="../navToggle.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../emailJS.js"></script>
 </head>
 
 <body class="contact-page">
@@ -70,6 +73,21 @@
                                     target="_blank">@0xKh4w</a></div>
                         </div>
                     </div>
+                </div>
+                <div id="contactForm">
+                    <form id="contact-form">
+                        <input type="hidden" name="contact_number">
+                        <label for="user_name">Name</label>
+                        <input type="text" name="user_name" id="user_name" required placeholder="Name">
+                        <br>
+                        <label for="email"> Email</label>
+                        <input type="email" name="user_email" id="email" required placeholder="Email">
+                        <br>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Share with me your idea 🙂"></textarea>
+                        <br>
+                        <input type="submit" id="submit" value="Send Message">
+                    </form>
                 </div>
             </div>
         </div>
