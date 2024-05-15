@@ -13,3 +13,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+#icon {
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+}
