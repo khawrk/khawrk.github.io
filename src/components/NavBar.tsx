@@ -4,7 +4,7 @@ const NavBar = () => {
   const [current, setCurrent] = useState<string>("Home")
 
   return (
-    <div className=" hidden sm:flex flex-row bg-transparent absolute right-0 justify-center items-center h-[90vh] gap-4 pr-4">
+    <div className="z-100 hidden sm:flex flex-row bg-transparent absolute right-0 justify-center items-center h-[90vh] gap-4 pr-4">
       <div className="h-[150px] flex flex-col gap-3 justify-center text-[14px]">
         <div className="flex w-[50px] justify-end h-[30px] cursor-pointer" onClick={() => setCurrent("Home")}>
           <h4 className="text-gray-text h-[30px] self-center" style={current === 'Home' ? { "color": "#EEF7FF" } : { "color": "#7D8082" }}>Home</h4>

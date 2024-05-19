@@ -19,7 +19,8 @@ export default {
       "LinkedInNormal": 'url(/src/assets/linkedin.png)',
       "LinkedInHover": 'url(/src/assets/linkedinHover.png)',
       "mailNormal": 'url(/src/assets/mail.png)',
-      "mailHover": 'url(src/assets/mailHover.png)'
+      "mailHover": 'url(src/assets/mailHover.png)',
+      "stars": 'url(src/assets/stars.svg)'
     },
     extend: {},
   },
