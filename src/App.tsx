@@ -33,16 +33,16 @@ function App() {
             <h1>Projects</h1>
           </Slide>
         </section> */}
-        <section id='Experience'>
-          {/* <Slide> */}
+        {/* <section id='Experience'>
+         
             <Experience />
-          {/* </Slide> */}
-        </section>
-        {/* <section id='Contact' >
-          <Slide>
-            <Contact />
-          </Slide>
+          
         </section> */}
+        <section id='Contact' >
+
+          <Contact />
+
+        </section>
         <img src={Plus} alt="" className='absolute bottom-0 left-0 sm:w-[100px] w-[70px]' />
         {end ? <h5 className='cursor-pointer text-gray-text text-[14px]' onClick={() => setEnd(false)}>Back to the top</h5> : <></>}
         <img src={L} alt="" className="absolute bottom-0 right-0 sm:w-[110px] w-[70px]" />
