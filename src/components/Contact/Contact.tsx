@@ -12,7 +12,7 @@ const Contact = () => {
           <div className="flex justify-center items-center sm:w-full w-full h-auto">
             <img src={ContactIcon} alt="" className="w-[200px] md:w-full" />
           </div>
-          <ContactForm />
+          <ContactForm  />
         </div>
       </div>
     </div>
