@@ -7,8 +7,11 @@ import L from './assets/L.svg'
 import './App.css'
 import Slide from './components/Slide'
 import About from './components/About/About'
+import Contact from './components/Contact/Contact'
+import { useState } from 'react'
 
 function App() {
+  const [end, setEnd] = useState<boolean>(false);
 
   return (
     <>
@@ -19,30 +22,30 @@ function App() {
         {/* <section id='Home'>
           <Home />
         </section> */}
-        <section id='About'>
+        {/* <section id='About'>
           <Slide>
             <About />
           </Slide>
-        </section>
-        {/* <section id='Projects' className='w-full min-h-[100vh] text-default-text-color'>
+        </section> */}
+        {/* <section id='Projects'>
           <Slide>
             <h1>Projects</h1>
           </Slide>
         </section> */}
-        {/* <section id='Experience' className='w-full min-h-[100vh] text-default-text-color'>
+        {/* <section id='Experience'>
           <Slide>
             <h1>Experience</h1>
           </Slide>
         </section> */}
-        {/* <section id='Contact' className='w-full min-h-[100vh] text-default-text-color'>
-          <Slide>
-            <h1>Contact</h1>
-          </Slide>
-        </section> */}
+        <section id='Contact' >
+          {/* <Slide> */}
+            <Contact />
+          {/* </Slide> */}
+        </section>
         <img src={Plus} alt="" className='absolute bottom-0 left-0 w-[100px]' />
+        {end ? <h5 className='cursor-pointer text-gray-text text-[14px]' onClick={() => setEnd(false)}>Back to the top</h5> : <></>}
         <img src={L} alt="" className="absolute bottom-0 right-0 w-[110px]" />
       </main>
-
     </>
   )
 }
