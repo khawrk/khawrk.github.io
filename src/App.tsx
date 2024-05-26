@@ -10,6 +10,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import { useState } from 'react'
 import Experience from './components/Experience/Experience'
+import Project from './components/Projects/Project'
 
 function App() {
   const [end, setEnd] = useState<boolean>(false);
@@ -28,21 +29,17 @@ function App() {
             <About />
           </Slide>
         </section> */}
-        {/* <section id='Projects'>
+        <section id='Projects'>
           <Slide>
-            <h1>Projects</h1>
+            <Project />
           </Slide>
-        </section> */}
-        {/* <section id='Experience'>
-         
-            <Experience />
-          
-        </section> */}
-        <section id='Contact' >
-
-          <Contact />
-
         </section>
+        {/* <section id='Experience'>
+            <Experience />
+        </section> */}
+        {/* <section id='Contact' >
+          <Contact />
+        </section> */}
         <img src={Plus} alt="" className='absolute bottom-0 left-0 sm:w-[100px] w-[70px]' />
         {end ? <h5 className='cursor-pointer text-gray-text text-[14px]' onClick={() => setEnd(false)}>Back to the top</h5> : <></>}
         <img src={L} alt="" className="absolute bottom-0 right-0 sm:w-[110px] w-[70px]" />
