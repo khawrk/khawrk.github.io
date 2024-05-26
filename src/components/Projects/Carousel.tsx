@@ -27,20 +27,20 @@ const projects: Project[] = [
         app: ''
     },
     {
-        imgSource: ColorIdea,
-        Title: 'Color Idea',
-        Description: 'Color Ideas is a website with color generator what allows people to try different color combinations for their website design. Users can either try colors from 140 CSS colors or using HEX generator which gives more colorful combinations.',
-        Tech: 'JavaScript, SCSS, HTML, Vercel',
-        github: 'https://github.com/khawrk/color-Idea',
-        app: 'https://color-ideas.vercel.app'
-    },
-    {
         imgSource: Groove,
         Title: 'Groove',
         Description: 'Groove is a web application that allows users to search for music and listen to the 30s preview of the song they searched for.',
         Tech: 'Spotify API, React, Bootstrap, Vercel, TypeScript, SCSS, Vite',
         github: 'https://github.com/khawrk/Groove',
         app: 'https://groove-music-rose.vercel.app'
+    },
+    {
+        imgSource: ColorIdea,
+        Title: 'Color Idea',
+        Description: 'Color Ideas is a website with color generator what allows people to try different color combinations for their website design. Users can either try colors from 140 CSS colors or using HEX generator which gives more colorful combinations.',
+        Tech: 'JavaScript, SCSS, HTML, Vercel',
+        github: 'https://github.com/khawrk/color-Idea',
+        app: 'https://color-ideas.vercel.app'
     },
     {
         imgSource: GeniusBot,
@@ -154,20 +154,15 @@ const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
             {projects.map((project: Project, idx: number) => (
                 <motion.div
                     key={idx}
-                    // style={{
-                    //     backgroundImage: `url(${imgSrc})`,
-                    //     backgroundSize: "cover",
-                    //     backgroundPosition: "center",
-                    // }}
                     animate={{ scale: imgIndex === idx ? 0.95 : 0.85 }}
                     transition={SPRING_OPTIONS}
-                    className="w-full shrink-0 rounded-xl object-cover"
+                    className="w-full shrink-0 rounded-xl object-cover flex justify-center"
                 >
                     {idx === 0 ?
                         //if index = 0 then it's home page
-                        <div className="flex m-auto flex-col pt-[2rem] md:px-[10rem]">
-                            <h1 className=" font-bold md:text-[30px] pb-10">Portfolio & Previous Projects</h1>
-                            <div className="flex flex-col gap-5 px-[10rem]">
+                        <div className="flex m-auto flex-col pt-[3rem] md:px-[10rem] px-0 text-default-text-color md:pt-[2rem] w-full">
+                            <h1 className=" font-bold md:text-[30px] text-[26px] pb-10">Portfolio & Previous Projects</h1>
+                            <div className="flex flex-col gap-5 md:px-[5rem] xl:px-[10rem] px-0 font-400">
                                 <p>
                                     I&#39;ve built various projects to purposely learn how new technologies/libraries work, to fulfil my passion and solve the problems I found by talking to people.
                                 </p>
@@ -182,34 +177,38 @@ const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
                             </div>
                         </div>
                         :
+                        // if index is even, then the image will be on the left side of the screen
                         idx % 2 === 0 ?
-                            <div className="flex flex-row justify-center gap-5">
-                                <div className="w-[100%] flex justify-center">
-                                    <img src={project.imgSource} alt={project.Title} />
+                            <div className="flex sm:flex-row flex-col justify-center sm:gap-5 gap-10 md:w-[80%] w-[100%] items-center text-default-text-color">
+                                <div className="sm:w-[100%] w-[60%] flex justify-center">
+                                    <img src={project.imgSource} alt={project.Title} className="sm:w-[70%] w-[70%]" />
                                 </div>
-                                <div className="w-[100%] flex justify-start flex-col items-start">
-                                    <h3 className="font-bold md:text-[30px] text-start">{project.Title}</h3>
-                                    <p>{project.Description}</p>
-                                    <p><span>Built using: </span> {project.Tech}</p>
-                                    <a href={project.github}><button>Github</button></a>
-                                    {project.app === '' ? <button disabled>Coming Soon</button> : <a href={project.app}><button>Try App</button></a>}
+                                <div className="w-[100%] flex flex-col gap-5 sm:justify-start sm:items-end justify-center">
+                                    <h3 className="font-bold text-[20px] text-center sm:text-[36px] sm:text-start drop-shadow-lg shadow-gray-text">{project.Title}</h3>
+                                    <p className="text-[16px] text-center sm:text-end font-400">{project.Description}</p>
+                                    <p className="text-[16px] text-center sm:text-end font-400"><span className="font-bold">Built using: </span> {project.Tech}</p>
+                                    <div className="flex flex-row gap-5 justify-center sm:justify-start items-center sm:items-start">
+                                        <a href={project.github} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-default-text-color text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Github</button></a>
+                                        {project.app === '' ? <button disabled className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-gray-text text-[14px] shadow-[6px_5px_4.3px_0px_rgba(0, 0, 0, 0.25)] inset-2">Coming Soon</button> : <a href={project.app} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-orange-text text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Try App</button></a>}
+                                    </div>
                                 </div>
                             </div>
-                            // if index is even, then the image will be on the left side of the screen
                             :
-                            <div className="flex flex-row justify-center gap-5">
-                                <div className="w-[100%]">
-                                    <h3>{project.Title}</h3>
-                                    <p>{project.Description}</p>
-                                    <p><span>Built using: </span> {project.Tech}</p>
-                                    <a href={project.github}><button>Github</button></a>
-                                    {project.app === '' ? <button disabled>Coming Soon</button> : <a href={project.app}><button>Try App</button></a>}
+                            // if index is odd, then the image will be on the right side of the screen
+                            <div className="flex sm:flex-row flex-col justify-center sm:gap-5 gap-10 md:w-[80%] w-[100%] items-center text-default-text-color">
+                                <div className="w-[100%] flex flex-col gap-5 sm:justify-start sm:items-start justify-center items-center">
+                                    <h3 className="font-bold text-[20px] text-center sm:text-[36px] sm:text-start drop-shadow-lg shadow-gray-text">{project.Title}</h3>
+                                    <p className="text-[16px] text-center sm:text-start font-400">{project.Description}</p>
+                                    <p className="text-[16px] text-center sm:text-start font-400"><span className="font-bold">Built using: </span> {project.Tech}</p>
+                                    <div className="flex flex-row gap-5 justify-center sm:justify-start items-center sm:items-start">
+                                        <a href={project.github} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-default-text-color text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Github</button></a>
+                                        {project.app === '' ? <button disabled className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-gray-text text-[14px] shadow-[6px_5px_4.3px_0px_rgba(0, 0, 0, 0.25)] inset-2">Coming Soon</button> : <a href={project.app} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-orange-text text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Try App</button></a>}
+                                    </div>
                                 </div>
-                                <div className="w-[100%] flex justify-center">
-                                    <img src={project.imgSource} alt={project.Title} />
+                                <div className="sm:w-[100%] w-[60%] flex justify-center">
+                                    <img src={project.imgSource} alt={project.Title} className="sm:w-[70%] w-[70%]" />
                                 </div>
                             </div>
-                        // if index is odd, then the image will be on the right side of the screen
                     }
                 </motion.div>
             ))}
