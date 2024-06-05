@@ -21,59 +21,57 @@ function App() {
   const [current, setCurrent] = useState<string>("Home");
 
   function Section({ children, id, current }: any) {
-    const ref = useRef(current);
+    const ref = useRef(document.querySelector(`#${id}`));
+    // ref2 = useRef(current);
     const isInView = useInView(ref, { once: false });
 
-    if (ref.current) {
-      setCurrent(ref.current.id)
-    }
-
     return (
-      <section ref={ref} id={id}>
-        <span
-          style={{
-            transform: isInView ? "none" : "translateX(-200px)",
-            opacity: isInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-          }}
-        >
-          {children}
-        </span>
-      </section>
+      <motion.div
+        ref={ref}
+        id={id}
+        style={{
+          transform: isInView ? "none" : "translateX(-300px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+        initial="hidden"
+        whileInView={{ opacity: 1 }}
+      >
+        {children}
+      </motion.div>
     );
   }
-
 
   return (
     <>
       <Header modeToggle={setDarkMode} currentMode={darkMode} />
       <ContactBar />
       <NavBar current={current} setCurrent={setCurrent} />
-      <main className='pt-10 sm:px-10 px-2 w-full h-[full]'>
+      <main className='pt-10 sm:px-10 px-2 w-full h-[full] hide-scrollbar'>
         <Section id='Home'>
-          <Slide delay={0.3}>
-            <Home />
-          </Slide>
+          {/* <Slide delay={0.3}> */}
+          <Home />
+          {/* </Slide> */}
         </Section>
         <Section id='About'>
-          <Slide delay={0.5}>
-            <About />
-          </Slide>
+          {/* <Slide delay={0.5}> */}
+          <About />
+          {/* </Slide> */}
         </Section>
         <Section id='Projects'>
-          <Slide delay={0.5}>
-            <Project />
-          </Slide>
+          {/* <Slide delay={0.5}> */}
+          <Project />
+          {/* </Slide> */}
         </Section>
         <Section id='Experience'>
-          <Slide delay={1}>
-            <Experience />
-          </Slide>
+          {/* <Slide delay={1}> */}
+          <Experience />
+          {/* </Slide> */}
         </Section>
         <Section id='Contact'>
-          <Slide delay={1}>
-            <Contact />
-          </Slide>
+          {/* <Slide delay={1}> */}
+          <Contact />
+          {/* </Slide> */}
         </Section>
         <img src={Plus} alt="" className='fixed bottom-0 left-0 sm:w-[100px] w-[70px]' />
         {end ? <h5 className='cursor-pointer text-gray-text text-[14px]' onClick={() => setEnd(false)}>Back to the top</h5> : <></>}

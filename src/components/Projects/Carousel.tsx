@@ -99,22 +99,23 @@ const Carousel = () => {
     const [imgIndex, setImgIndex] = useState<number>(0);
     const dragX = useMotionValue(0);
 
+
     useEffect(() => {
-        const intervalRef = setInterval(() => {
-            const x = dragX.get();
-
-            if (x === 0) {
-                setImgIndex((prev) => {
-                    if (prev === projects.length - 1) {
-                        return 0;
-                    }
-                    return prev + 1;
-                });
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "ArrowRight" && imgIndex < projects.length - 1) {
+                setImgIndex((prev) => prev + 1);
+            } else if (event.key === "ArrowLeft" && imgIndex > 0) {
+                setImgIndex((prev) => prev - 1);
             }
-        }, AUTO_DELAY);
+        };
 
-        return () => clearInterval(intervalRef);
-    }, []);
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [imgIndex]);
+
 
     const onDragEnd = () => {
         const x = dragX.get();
