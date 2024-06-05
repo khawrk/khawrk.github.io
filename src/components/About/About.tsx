@@ -5,7 +5,7 @@ import Slide from "../Slide";
 const About = () => {
 
   return (
-    <div className="text-default-text-color relative sm:mx-[2.5rem] h-[100vh] bg-transparent z-10 ">
+    <div className="text-default-text-color relative sm:mx-[2.5rem] h-[100vh] bg-transparent z-10 flex items-center">
       <AboutBg />
       <Slide>
         <div className="relative w-full z-10 p-4 text-default-text-color h-[500px] flex flex-col justify-center gap-2 pt-10 sm:px-[2rem] xl:px-[15rem] pb-[5rem]">

@@ -5,7 +5,7 @@ import ContactIcon from '../../assets/ContactIcon.svg'
 const Contact = () => {
   return (
     <>
-      <div className="text-default-text-color relative sm:mx-[2.5rem] z-10 h-[100vh] flex flex-col justify-center">
+      <div className="text-default-text-color relative sm:mx-[2.5rem] pt-10 sm:pt-0 z-10 h-[100vh] flex flex-col justify-center">
         <ContactBg />
         <div className="relative w-full z-10 p-4 text-default-text-color h-[500px] flex flex-col justify-center pt-[9rem] sm:pt-10 sm:px-[2rem] xl:px-[15rem] pb-[8rem] sm:pb-0">
           <h1 className="font-bold sm:text-[30px] text-[18px] pb-0 sm:pb-4">Let’s talk about your ideas</h1>

@@ -44,10 +44,10 @@ function App() {
 
   return (
     <>
+      <main className='pt-5 sm:px-5 px-2 w-full h-[full] hide-scrollbar' id='Home'>
       <Header modeToggle={setDarkMode} currentMode={darkMode} />
       <ContactBar />
       <NavBar current={current} setCurrent={setCurrent} />
-      <main className='pt-10 sm:px-10 px-2 w-full h-[full] hide-scrollbar'>
         <Section id='Home'>
           {/* <Slide delay={0.3}> */}
           <Home />
@@ -68,11 +68,11 @@ function App() {
           <Experience />
           {/* </Slide> */}
         </Section>
-        <Section id='Contact'>
-          {/* <Slide delay={1}> */}
-          <Contact />
-          {/* </Slide> */}
-        </Section>
+          <Section id='Contact'>
+            {/* <Slide delay={1}> */}
+            <Contact />
+            {/* </Slide> */}
+          </Section>
         <img src={Plus} alt="" className='fixed bottom-0 left-0 sm:w-[100px] w-[70px]' />
         {end ? <h5 className='cursor-pointer text-gray-text text-[14px]' onClick={() => setEnd(false)}>Back to the top</h5> : <></>}
         <img src={L} alt="" className="fixed bottom-0 right-0 sm:w-[110px] w-[70px]" />

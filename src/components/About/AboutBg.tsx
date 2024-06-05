@@ -6,8 +6,8 @@ import E from '../../assets/ELetter.svg'
 const AboutBg = () => {
     return (
         <>
-            <div className="-z-[100] absolute left-0 bg-stars w-full h-full bg-cover px-2 mx-[1rem]">
-                <div className='absolute opacity-[45%] sm:opacity-[70%] left-[15%] sm:top-[50px] top-[50px] self-center flex justify-center items-center'>
+            <div className="-z-[100] absolute left-0 bg-stars w-full h-[100vh] bg-cover px-2 mx-[1rem] sm:flex sm:items-center">
+                <div className='absolute opacity-[45%] sm:opacity-[70%] left-[15%] items-center sm:top-[200px] top-[200px] self-center flex    '>
                     <img src={E} alt="" className='w-[300px]' />
                 </div>
                 <img src={Asterisk1} alt="" className=' absolute top-[-30px] left-[20%] sm:w-[120px] w-[90px]' />

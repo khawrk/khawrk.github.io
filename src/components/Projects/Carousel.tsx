@@ -84,8 +84,8 @@ const projects: Project[] = [
     }
 ]
 
-const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 10;
+// const ONE_SECOND = 1000;
+// const AUTO_DELAY = ONE_SECOND * 10;
 const DRAG_BUFFER = 50;
 
 const SPRING_OPTIONS = {
@@ -128,7 +128,7 @@ const Carousel = () => {
     };
 
     return (
-        <div className="relative overflow-hidden z-[11] px-10">
+        <div className="relative overflow-hidden z-[11] sm:px-10 px-5">
             <motion.div
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
@@ -136,7 +136,7 @@ const Carousel = () => {
                 animate={{ translateX: `-${imgIndex * 100}%` }}
                 transition={SPRING_OPTIONS}
                 onDragEnd={onDragEnd}
-                className="flex cursor-grab items-center active:cursor-grabbing"
+                className="flex cursor-grab items-center active:cursor-grabbing "
             >
                 <Slides imgIndex={imgIndex} />
             </motion.div>
@@ -162,8 +162,8 @@ const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
                     {idx === 0 ?
                         //if index = 0 then it's home page
                         <div className="flex m-auto flex-col pt-[3rem] md:px-[4rem] px-0 text-default-text-color md:pt-[2rem] w-full">
-                            <h1 className=" font-bold md:text-[30px] text-[26px] pb-10">Portfolio & Previous Projects</h1>
-                            <div className="flex flex-col gap-5 md:px-[5rem] xl:px-[10rem] px-0 font-400">
+                            <h1 className=" font-bold md:text-[30px] text-[20px] pb-10">Portfolio & Previous Projects</h1>
+                            <div className="flex flex-col gap-5 md:px-[5rem] xl:px-[10rem] px-0 font-400 sm:text-[16px] text-[12px]">
                                 <p>
                                     I&#39;ve built various projects to purposely learn how new technologies/libraries work, to fulfil my passion and solve the problems I found by talking to people.
                                 </p>
@@ -180,30 +180,30 @@ const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
                         :
                         // if index is even, then the image will be on the left side of the screen
                         idx % 2 === 0 ?
-                            <div className="flex sm:flex-row flex-col justify-center sm:gap-5 gap-10 md:w-[80%] w-[100%] items-center text-default-text-color">
+                            <div className="pt-10 sm:pt-0 flex sm:flex-row flex-col justify-center sm:gap-5 gap-10 md:w-[80%] w-[100%] items-center text-default-text-color">
                                 <div className="sm:w-[100%] w-[60%] flex justify-center">
                                     <img src={project.imgSource} alt={project.Title} className="sm:w-[70%] w-[70%]" />
                                 </div>
                                 <div className="w-[100%] flex flex-col gap-5 sm:justify-start sm:items-end justify-center">
                                     <h3 className="font-bold text-[20px] text-center sm:text-[36px] sm:text-start drop-shadow-lg shadow-gray-text">{project.Title}</h3>
-                                    <p className="text-[16px] text-center sm:text-end font-400">{project.Description}</p>
-                                    <p className="text-[16px] text-center sm:text-end font-400"><span className="font-bold">Built using: </span> {project.Tech}</p>
+                                    <p className="sm:text-[16px] text-[12px] text-center sm:text-end font-400">{project.Description}</p>
+                                    <p className="sm:text-[16px] text-[12px] text-center sm:text-end font-400"><span className="font-bold">Built using: </span> {project.Tech}</p>
                                     <div className="flex flex-row gap-5 justify-center sm:justify-start items-center sm:items-start">
-                                        <a href={project.github} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-default-text-color text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Github</button></a>
-                                        {project.app === '' ? <button disabled className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-gray-text text-[14px] shadow-[6px_5px_4.3px_0px_rgba(0, 0, 0, 0.25)] inset-2">Coming Soon</button> : <a href={project.app} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-orange-text text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Try App</button></a>}
+                                        <a href={project.github} className="sm:w-[120px] w-[80px] h-[30px] flex justify-center items-center rounded-xl bg-default-text-color text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Github</button></a>
+                                        {project.app === '' ? <button disabled className="sm:w-[120px] w-[85px] text-[12px] h-[30px] flex justify-center items-center rounded-xl bg-gray-text sm:text-[14px] shadow-[6px_5px_4.3px_0px_rgba(0, 0, 0, 0.25)] inset-2">Coming Soon</button> : <a href={project.app} className="sm:w-[120px] w-[80px] h-[30px] flex justify-center items-center rounded-xl bg-orange-text text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Try App</button></a>}
                                     </div>
                                 </div>
                             </div>
                             :
                             // if index is odd, then the image will be on the right side of the screen
-                            <div className="flex sm:flex-row flex-col justify-center sm:gap-5 gap-10 md:w-[80%] w-[100%] items-center text-default-text-color">
+                            <div className="pt-10 sm:pt-0 flex sm:flex-row flex-col justify-center sm:gap-5 gap-10 md:w-[80%] w-[100%] items-center text-default-text-color">
                                 <div className="w-[100%] flex flex-col gap-5 sm:justify-start sm:items-start justify-center items-center">
-                                    <h3 className="font-bold text-[20px] text-center sm:text-[36px] sm:text-start drop-shadow-lg shadow-gray-text">{project.Title}</h3>
-                                    <p className="text-[16px] text-center sm:text-start font-400">{project.Description}</p>
-                                    <p className="text-[16px] text-center sm:text-start font-400"><span className="font-bold">Built using: </span> {project.Tech}</p>
-                                    <div className="flex flex-row gap-5 justify-center sm:justify-start items-center sm:items-start">
-                                        <a href={project.github} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-default-text-color text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Github</button></a>
-                                        {project.app === '' ? <button disabled className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-gray-text text-[14px] shadow-[6px_5px_4.3px_0px_rgba(0, 0, 0, 0.25)] inset-2">Coming Soon</button> : <a href={project.app} className="w-[120px] h-[30px] flex justify-center items-center rounded-xl bg-orange-text text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Try App</button></a>}
+                                    <h3 className="font-bold text-[20px] text-center sm:text-[32px] sm:text-start drop-shadow-lg shadow-gray-text">{project.Title}</h3>
+                                    <p className="sm:text-[16px] text-[12px] text-center sm:text-start font-400">{project.Description}</p>
+                                    <p className="sm:text-[16px] text-[12px] text-center sm:text-start font-400"><span className="font-bold">Built using: </span> {project.Tech}</p>
+                                    <div className="flex sm:flex-row gap-5 justify-center sm:justify-start items-center sm:items-start">
+                                        <a href={project.github} className="sm:w-[120px] w-[80px] h-[30px] flex justify-center items-center rounded-xl bg-default-text-color text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Github</button></a>
+                                        {project.app === '' ? <button disabled className="sm:w-[120px] w-[85px] text-[12px] h-[30px] flex justify-center items-center rounded-xl bg-gray-text sm:text-[14px] shadow-[6px_5px_4.3px_0px_rgba(0, 0, 0, 0.25)] inset-2">Coming Soon</button> : <a href={project.app} className="sm:w-[120px] w-[80px] h-[30px] flex justify-center items-center rounded-xl bg-orange-text text-dark-bg text-[14px] font-bold hover:translate-y-1"><button>Try App</button></a>}
                                     </div>
                                 </div>
                                 <div className="sm:w-[100%] w-[60%] flex justify-center">
