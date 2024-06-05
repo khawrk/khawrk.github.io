@@ -33,7 +33,7 @@ export default function Slide({ children, delay, className }: props) {
                 stiffness: 100,
             }}
             initial="hidden"
-            animate={controls}
+            animate="visible"
             className={className}
         >
             {children}

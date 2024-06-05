@@ -4,10 +4,10 @@ import Slide from "../Slide";
 
 const About = () => {
   return (
-    <div className="text-default-text-color relative sm:mx-[2.5rem]">
+    <div className="text-default-text-color relative sm:mx-[2.5rem] h-[100vh] bg-transparent z-10">
       <AboutBg />
       <Slide>
-        <div className="relative w-full z-10 p-4 text-default-text-color h-[500px] flex flex-col justify-center gap-2 pt-10 sm:px-[2rem] xl:px-[15rem]">
+        <div className="relative w-full z-10 p-4 text-default-text-color h-[500px] flex flex-col justify-center gap-2 pt-10 sm:px-[2rem] xl:px-[15rem] pb-[5rem]">
           <div className="flex xl:justify-end justify-center mt-[5rem] text-gray-text">
             <p>AKA 0xkhaw in web3 world</p>
           </div>

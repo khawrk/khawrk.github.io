@@ -160,7 +160,7 @@ const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
                 >
                     {idx === 0 ?
                         //if index = 0 then it's home page
-                        <div className="flex m-auto flex-col pt-[3rem] md:px-[10rem] px-0 text-default-text-color md:pt-[2rem] w-full">
+                        <div className="flex m-auto flex-col pt-[3rem] md:px-[4rem] px-0 text-default-text-color md:pt-[2rem] w-full">
                             <h1 className=" font-bold md:text-[30px] text-[26px] pb-10">Portfolio & Previous Projects</h1>
                             <div className="flex flex-col gap-5 md:px-[5rem] xl:px-[10rem] px-0 font-400">
                                 <p>

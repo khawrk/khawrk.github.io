@@ -20,10 +20,13 @@ export default {
       "LinkedInHover": 'url(/src/assets/linkedinHover.png)',
       "mailNormal": 'url(/src/assets/mail.png)',
       "mailHover": 'url(src/assets/mailHover.png)',
-      "stars": 'url(src/assets/stars.svg)'
+      "stars": 'url(src/assets/stars.svg)',
+      "lightMode": 'url(src/assets/LightMode.svg)',
+      "darkMode": 'url(src/assets/DarkMode.svg)',
     },
     extend: {},
   },
+  lightMode: 'class',
   plugins: [],
 }
 

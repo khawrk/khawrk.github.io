@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <div className="text-default-text-color relative mx-[2.5rem]">
+    <div className="text-default-text-color relative mx-[2.5rem] h-[100vh]">
       <HomeBg />
       <div className="relative z-10 p-4 text-default-text-color flex flex-col justify-center">
         <div className="flex flex-col w-full gap-4">

@@ -57,7 +57,7 @@ const Experience = () => {
     };
 
     return (
-        <div className="text-default-text-color relative sm:mx-[2.5rem]">
+        <div className="text-default-text-color relative sm:mx-[2.5rem] z-10 h-[100vh] bg-transparent">
             <ExperienceBg />
             <div className="relative w-full z-10  text-default-text-color h-[500px] flex flex-col justify-center md:pt-[9rem] sm:pt-10 sm:px-[2rem] xl:px-[15rem]">
                 <div className="flex flex-col gap-2 self-center w-[90%]">
