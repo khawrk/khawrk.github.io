@@ -1,9 +1,8 @@
 import AboutBg from "./AboutBg"
-import { motion } from 'framer-motion';
 import Slide from "../Slide";
 
-const About = () => {
 
+const About = () => {
   return (
     <div className="text-default-text-color relative sm:mx-[2.5rem] h-[100vh] bg-transparent z-10 flex items-center">
       <AboutBg />

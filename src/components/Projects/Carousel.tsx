@@ -84,8 +84,6 @@ const projects: Project[] = [
     }
 ]
 
-// const ONE_SECOND = 1000;
-// const AUTO_DELAY = ONE_SECOND * 10;
 const DRAG_BUFFER = 50;
 
 const SPRING_OPTIONS = {
@@ -128,7 +126,7 @@ const Carousel = () => {
     };
 
     return (
-        <div className="relative overflow-hidden z-[11] sm:px-10 px-5">
+        <div className="relative overflow-hidden z-[11] sm:px-10 px-5 ">
             <motion.div
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}

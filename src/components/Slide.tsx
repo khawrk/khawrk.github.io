@@ -15,6 +15,8 @@ export default function Slide({ children, delay, className }: props) {
     useEffect(() => {
         if (isInview) {
             controls.start("visible");
+        } else {
+            controls.start("hidden");
         }
     }, [isInview]);
 

@@ -1,5 +1,3 @@
-import { useState } from "react"
-import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
 type Props = {
@@ -8,7 +6,6 @@ type Props = {
 }
 
 const NavBar = ({ current, setCurrent }: Props) => {
-
   return (
     <div className="z-[11] hidden sm:flex flex-row bg-transparent fixed mb-5 right-0 bottom-0 items-center h-[90vh] gap-4 mr-2 hide-scrollbar overflow-x-hidden">
       <div className="h-auto flex flex-col gap-6 justify-center text-[14px]">

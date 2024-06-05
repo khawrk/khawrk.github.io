@@ -1,16 +1,8 @@
 import Emoji from '../assets/50xIcon.svg'
-import LightMode from '../assets/LightMode.svg'
-import DarkMode from '../assets/DarkMode.svg'
-import { useState } from 'react'
 import { Link } from "react-scroll";
 
-type Props = {
-    currentMode: boolean,
-    modeToggle: (mode: boolean) => void
-}
-
-const Header = ({ modeToggle, currentMode }: Props) => {
-    // const [lightMode, setLightMode] = useState(false)
+const Header = () => {
+    
 
     return (
         <nav className='bg-transparent sticky flex justify-between top-0 right-0 py-5 px-5 z-[25] '>
