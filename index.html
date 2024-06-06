@@ -1,66 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="hide-scrollbar">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello it's Emika 😎</title>
-  <link rel="icon" type="image/png" href="./images/EmojiHtmlIcon.png" sizes="32x32">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://kit.fontawesome.com/9684f61028.js" crossorigin="anonymous"></script>
-  <script src="./navToggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./src/assets/32xIcon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khaw</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="wrapper">
-      <header class="nav" id="nav">
-        <p id="name">More About Me</p>
-        <ul class="navButtons" id="myLinks">
-          <li><a href="./index.html" id="active">Home</a></li>
-          <li><a href="./pages/about.html">About</a></li>
-          <li><a href="./pages/project.html">Projects</a></li>
-          <li><a href="./pages/skills.html">Skills</a></li>
-          <li><a href="./pages/workExp.html">Experience</a></li>
-          <li><a href="./pages/contact.html">Contact</a></li>
-        </ul>
-        <div>
-          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-          <a href="javascript:void(0);" class="hamburger" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-        </div>
-      </header>
-    </div>
-
-    <div class="wrapper">
-      <div class="home">
-        <div class="box__text">
-          <h1>Hi 👋, I’m Emika Suntisumranwilai</h1>
-          <h2>I’m a <span class="yellowUnderline" id="role"></span></h2>
-          <div class="icons">
-            <ul>
-              <li class="icon-circle"><a href="https://twitter.com/0xkh4w" target="_blank"><i
-                    class="fa-brands fa-x-twitter"></i></a></li>
-              <li class="icon-circle"><a href="https://www.linkedin.com/in/emikasuntisumranwilai/" target="_blank"><i
-                    class="fa-brands fa-linkedin-in"></i></a></li>
-              <li class="icon-circle"><a href="https://github.com/khawrk" target="_blank"><i
-                    class="fa-brands fa-github"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="box__image">
-          <img src="./images/memojiPNG.png" alt="memoji">
-        </div>
-      </div>
-    </div>
-    <div class="wrapper">
-      <footer>
-        <p>made with ♥️ and ☕</p>
-      </footer>
-    </div>
-  </div>
-  <script src="./multipleText.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

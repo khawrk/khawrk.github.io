@@ -1,0 +1,44 @@
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
+
+type props = {
+    children: React.ReactNode;
+    className?: string;
+    delay?: number;
+};
+
+export default function Slide({ children, delay, className }: props) {
+    const ref = useRef(null);
+    const isInview = useInView(ref, { once: true });
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (isInview) {
+            controls.start("visible");
+        } else {
+            controls.start("hidden");
+        }
+    }, [isInview]);
+
+    return (
+        <motion.div
+            ref={ref}
+            variants={{
+                hidden: { opacity: 0, translateY: -100 },
+                visible: { opacity: 1, translateY: 0 },
+            }}
+            transition={{
+                type: "spring",
+                duration: 0.2,
+                damping: 8,
+                delay: 0.1,
+                stiffness: 100,
+            }}
+            initial="hidden"
+            animate="visible"
+            className={className}
+        >
+            {children}
+        </motion.div>
+    );
+}
