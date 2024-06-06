@@ -36,7 +36,11 @@ const logos = [
     { src: TypeScript, name: 'TypeScript' }
 ];
 
-const Experience = () => {
+type Props = {
+    current: string;
+}
+
+const Experience = ({ current }: Props) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     const listVariants = {
@@ -44,7 +48,7 @@ const Experience = () => {
             opacity: 1,
             scale: 1,
             transition: {
-                delay: 0.2,
+                delay: 0.5,
                 staggerChildren: 0.1
             }
         },
@@ -57,37 +61,38 @@ const Experience = () => {
     };
 
     return (
-        <div className="text-default-text-color relative sm:mx-[2.5rem] z-10 h-[100vh] bg-transparent">
+        <div className="text-default-text-color relative sm:mx-[2.5rem] z-10 h-[100vh] bg-transparent flex items-center">
             <ExperienceBg />
             <div className="relative w-full z-10  text-default-text-color h-[500px] flex flex-col justify-center md:pt-[9rem] sm:pt-10 sm:px-[2rem] xl:px-[15rem]">
                 <div className="flex flex-col gap-2 self-center w-[90%]">
                     <h6 className=" text-gray-text sm:text-[12px] text-[10px]">Knowledge is of no value unless you put it into practice</h6>
                     <h1 className=" text-white md:text-[30px] text-[18px] font-bold">Skills and Work Experience</h1>
-                    <p className=" text-default-text-color sm:text-[14px] text-[12px]">My main expertise and interest is in full-stack development and web3.</p>
-                    <p className=" text-default-text-color sm:text-[14px] text-[12px]">For the past years, I’ve been working in various roles across industries with companies of various sizes
+                    <p className=" text-default-text-color sm:text-[16px] text-[12px]">My main expertise and interest is in full-stack development and web3.</p>
+                    <p className=" text-default-text-color sm:text-[16px] text-[12px]">For the past years, I’ve been working in various roles across industries with companies of various sizes
                         I’d call myself a still ‘jack of all trades’ turning a professional developer</p>
-                    <p className=" text-default-text-color text-[14px]">Want to get my detailed work experience? <span className=" text-orange-text font-bold cursor-pointer"><a href={Resume} download="Emika_Suntisumranwilai_Software_Engineer">Download my resume</a></span> </p>
+                    <p className=" text-default-text-color sm:text-[16px] text-[12px]">Want to get my detailed work experience? <br /> <span className=" text-orange-text font-bold cursor-pointer"><a href={Resume} download="Emika_Suntisumranwilai_Software_Engineer">Download my resume</a></span> </p>
                 </div>
                 <div className="flex mt-10">
-                    <motion.ul
-                        initial="hidden"
-                        animate="visible"
-                        variants={listVariants}
-                        className="list-none flex flex-row gap-4 flex-wrap justify-center"
+                    {current === 'Experience' && (
+                        <motion.ul
+                            initial="hidden"
+                            animate="visible"
+                            variants={listVariants}
+                            className="list-none flex flex-row gap-4 flex-wrap justify-center lg:mx-[0rem] mx-[2.5rem]"
 
-                    >
-                        {logos.map((logo, index) => (
-                            <motion.li onHoverStart={() => setHoveredIndex(index)}
-                                onHoverEnd={() => setHoveredIndex(null)} key={index} variants={itemVariants} className="relative">
-                                <img src={logo.src} alt={logo.name} className="md:w-[85px] md:h-[85px] w-[35px] h-[35px] self-center" />
-                                {hoveredIndex === index && (
-                                    <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 w-auto px-2 h-[25px] self-center rounded-lg bg-gray-text bg-opacity-90 text-white text-center">
-                                        {logo.name}
-                                    </div>
-                                )}
-                            </motion.li>
-                        ))}
-                    </motion.ul>
+                        >
+                            {logos.map((logo, index) => (
+                                <motion.li onHoverStart={() => setHoveredIndex(index)}
+                                    onHoverEnd={() => setHoveredIndex(null)} key={index} variants={itemVariants} className="relative">
+                                    <img src={logo.src} alt={logo.name} className="md:w-[85px] md:h-[85px] w-[35px] h-[35px] self-center" />
+                                    {hoveredIndex === index && (
+                                        <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 w-auto px-2 h-[25px] self-center rounded-lg bg-gray-text bg-opacity-90 text-white text-center">
+                                            {logo.name}
+                                        </div>
+                                    )}
+                                </motion.li>
+                            ))}
+                        </motion.ul>)}
                 </div>
             </div>
 

@@ -39,8 +39,8 @@ const About = () => {
             </h2>
           </div>
           <div className="xl:self-end self-center right-0 flex flex-col gap-5 text-default-text-color sm:text-[16px] text-[14px]">
-            <p className="w-[300px] sm:w-[70%] self-center xl:self-end">I’m a web3 researcher, product manager, and full-stack developer based in Vancouver, Canada.</p>
-            <p className="w-[300px] sm:w-[70%] self-center xl:self-end">Before my career transition to being a developer, I worked as an operation manager, product lead, research analyst, and founded three startups and were part of startup incubator programs such as League of Innovator and FoundersBoost Vancouver.</p>
+            <p className="w-[300px] sm:w-[70%] self-center lg:text-end lg:self-end">I’m a web3 researcher, product manager, and full-stack developer based in Vancouver, Canada.</p>
+            <p className="w-[300px] sm:w-[70%] self-center lg:text-end lg:self-end">Before my career transition to being a developer, I worked as an operation manager, product lead, research analyst, and founded three startups and were part of startup incubator programs such as League of Innovator and FoundersBoost Vancouver.</p>
           </div>
         </div>
       </Slide>
