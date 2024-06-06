@@ -5,7 +5,7 @@ import Home from './components/Home/Home'
 import Plus from './assets/Plus.svg'
 import L from './assets/L.svg'
 import './App.css'
-import Slide from './components/Slide'
+// import Slide from './components/Slide'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import { useState, useEffect, useRef } from 'react'
@@ -13,10 +13,6 @@ import Experience from './components/Experience/Experience'
 import Project from './components/Projects/Project'
 import {
   motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
   useInView
 } from "framer-motion";
 

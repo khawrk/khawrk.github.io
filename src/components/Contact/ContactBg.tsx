@@ -1,5 +1,5 @@
 import Asterisk1 from '../../assets/Asterisk1.svg'
-import Asterisk2 from '../../assets/Asterisk2.svg'
+// import Asterisk2 from '../../assets/Asterisk2.svg'
 
 const ContactBg = () => {
     return (
