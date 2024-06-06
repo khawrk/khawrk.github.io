@@ -14,7 +14,7 @@ import React from '../../assets/logos/React.svg'
 import SCSS from '../../assets/logos/SCSS.svg'
 import Tailwind from '../../assets/logos/Tailwind.svg'
 import TypeScript from '../../assets/logos/TypeScript.svg'
-// import { stagger, animate, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { useState } from "react"
 import Resume from '../../files/Emika_Suntisumranwilai_Resume_Feb_SoftwareEngineer.pdf'
 
