@@ -31,10 +31,10 @@ const loadingCircleVariants = {
     }
 }
 
-const loadingTransition = {
+const loadingTransition: any = {
     duration: 0.5,
     repeat: Infinity,
-    repeatType: "reverse",
+    repeatType: 'reverse',
     ease: 'easeInOut',
 }
 
