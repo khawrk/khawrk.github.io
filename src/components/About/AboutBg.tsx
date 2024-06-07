@@ -10,10 +10,9 @@ const AboutBg = () => {
                 <div className='absolute opacity-[45%] sm:opacity-[70%] left-[15%] items-center sm:top-[200px] top-[200px] self-center flex    '>
                     <img src={E} alt="" className='w-[300px]' />
                 </div>
-                <img src={Asterisk1} alt="" className=' absolute top-[-30px] left-[20%] sm:w-[120px] w-[90px]' />
+                <img src={Asterisk1} alt="" className=' absolute top-[100px] left-[20%] sm:w-[120px] w-[90px]' />
                 <img src={Asterisk2} alt="" className='hidden sm:flex absolute right-[10%] bottom-[30%] sm:w-[120px] w-[90px]' />
             </div>
-
         </>
     )
 }

@@ -30,13 +30,12 @@ const NavBar = ({ current, setCurrent }: Props) => {
           </Link>
         </div>
         <div className="flex font-bold w-[70px] justify-end gap-3 h-[40px] cursor-pointer" onClick={() => setCurrent("Contact")}>
-          <Link onClick={() => setCurrent("Contact")} className="flex" to="Contact" smooth={true} duration={500}>
+          <Link onClick={() => setCurrent("Contact")} className="flex" to="footer" smooth={true} duration={500}>
             <h4 className="text-gray-text h-[30px] w-[58px] self-center" style={current === 'Contact' ? { "color": "#EEF7FF" } : { "color": "#7D8082" }} >Contact</h4>
           </Link>
         </div>
       </div>
       <div className="h-[300px] bg-gray-text w-[2px] gap-6 flex flex-col rounded-lg">
-        {/* <motion.div className="origin-top bg-orange-text top-[50] right-0 w-[2px] h-[300px]" style={{ scaleY }} /> */}
         <div className="h-[45px]  w-[2px] self-end flex rounded-lg" style={current === 'Home' ? { "backgroundColor": "#EEF7FF" } : { "backgroundColor": "#7D8082" }}></div>
         <div className="h-[45px]  w-[2px] self-end flex rounded-lg" style={current === 'About' ? { "backgroundColor": "#EEF7FF" } : { "backgroundColor": "#7D8082" }}></div>
         <div className="h-[45px]  w-[2px] self-end flex rounded-lg" style={current === 'Projects' ? { "backgroundColor": "#EEF7FF" } : { "backgroundColor": "#7D8082" }}></div>

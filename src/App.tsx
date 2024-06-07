@@ -8,45 +8,37 @@ import './App.css'
 // import Slide from './components/Slide'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Experience from './components/Experience/Experience'
 import Project from './components/Projects/Project'
+import { Link } from "react-scroll";
 import {
   motion,
-  useInView
+  useInView, inView,
 } from "framer-motion";
 
 type SectionProps = {
   children: React.ReactNode;
   id: string;
-  current: string;
-  setCurrent: React.Dispatch<React.SetStateAction<string>>,
-  refElement: React.RefObject<HTMLDivElement>;
 }
 
-function Section({ children, id, refElement, setCurrent }: SectionProps) {
-  const ref = refElement
+function Section({ children, id }: SectionProps) {
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
-
-  useEffect(() => {
-    if (isInView) {
-      setCurrent(id);
-    }
-  }, [isInView, id, setCurrent]);
-
 
   return (
     <motion.div
       ref={ref}
       id={id}
       style={{
-        transform: isInView ? "none" : "translateX(-300px)",
+        transform: isInView ? "none" : "translateY(100px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
       }}
       initial="hidden"
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, root: ref }}
+      className='flex justify-center items-start w-full h-[100vh]'
     >
       {children}
     </motion.div>
@@ -56,32 +48,73 @@ function Section({ children, id, refElement, setCurrent }: SectionProps) {
 function App() {
   const [end, setEnd] = useState<boolean>(false);
   const [current, setCurrent] = useState<string>("Home");
-  const scrollRef = useRef(null)
+
+  const home: HTMLElement | null = document.getElementById('Home1')!;
+  const about: HTMLElement | null = document.getElementById('About')!;
+  const project: HTMLElement | null = document.getElementById('Projects')!;
+  const experience: HTMLElement | null = document.getElementById('Experience')!
+  const contact: HTMLElement | null = document.getElementById('Contact')!
+
+
+  useEffect(() => {
+    const scroll = () => {
+      if (window.scrollY > 100) {
+        setEnd(true)
+      } else {
+        setEnd(false)
+      }
+    }
+    window.addEventListener('scroll', scroll)
+    return () => {
+      window.removeEventListener('scroll', scroll)
+    }
+
+  }, [current]);
+
+
+  inView(home, () => {
+    setCurrent('Home')
+  }, { amount: 0.5 })
+  inView(about, () => {
+    setCurrent('About')
+  }, { amount: 0.75 })
+  inView(project, () =>
+    setCurrent('Projects')
+    , { amount: 0.75 })
+  inView(experience, () => {
+    setCurrent('Experience')
+  }, { amount: 0.5 })
+  inView(contact, () => {
+    setCurrent('Contact')
+  }, { amount: 0.5 })
+
 
   return (
     <>
-      <main className='pt-5 sm:px-5 px-2 w-full h-[full] hide-scrollbar' id='Home' ref={scrollRef}>
-        <Header />
-        <ContactBar />
-        <NavBar current={current} setCurrent={setCurrent} />
-        <Section id='Home' current={current} setCurrent={setCurrent} refElement={scrollRef}>
-          <Home />
+      <Header />
+      <ContactBar />
+      <NavBar current={current} setCurrent={setCurrent} />
+      <main className='sm:px-5 px-2 w-full h-[full] hide-scrollbar' id='Home' >
+        <Section id='Home1'  >
+          <Home current={current} />
         </Section>
-        <Section id='About' current={current} setCurrent={setCurrent} refElement={scrollRef}>
+        <Section id='About'  >
           <About />
         </Section>
-        <Section id='Projects' current={current} setCurrent={setCurrent} refElement={scrollRef}>
+        <Section id='Projects'  >
           <Project />
         </Section>
-        <Section id='Experience' current={current} setCurrent={setCurrent} refElement={scrollRef}>
-          <Experience />
+        <Section id='Experience' >
+          <motion.div id='Experience'>
+            <Experience current={current} />
+          </motion.div>
         </Section>
-        <Section id='Contact' current={current} setCurrent={setCurrent} refElement={scrollRef}>
+        <Section id='Contact'   >
           <Contact />
         </Section>
-        <img src={Plus} alt="" className='fixed bottom-0 left-0 sm:w-[100px] w-[70px]' />
-        {end ? <h5 className='cursor-pointer text-gray-text text-[14px]' onClick={() => setEnd(false)}>Back to the top</h5> : <></>}
-        <img src={L} alt="" className="fixed bottom-0 right-0 sm:w-[110px] w-[70px]" />
+        <img src={Plus} alt="" className='fixed bottom-0 left-0 sm:w-[100px] w-[70px] z-20' />
+        {end ? <Link to='Home'><h5 id='footer' className='h-[50px] pb-[1rem] cursor-pointer text-gray-text text-[14px] hover:text-white' onClick={() => setCurrent('Home')}>Back to the top</h5></Link> : <></>}
+        <img src={L} alt="" className="fixed bottom-0 right-0 sm:w-[110px] w-[70px] z-20" />
       </main >
     </>
   )
