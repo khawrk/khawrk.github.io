@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import FitTrack from "../../assets/projects/FitTrack.svg";
 import ColorIdea from "../../assets/projects/ColorIdea.svg";
@@ -85,6 +85,7 @@ const projects: Project[] = [
 ]
 
 const DRAG_BUFFER = 50;
+const INTERVAL_DURATION = 5000;
 
 const SPRING_OPTIONS = {
     type: "spring",
@@ -96,7 +97,8 @@ const SPRING_OPTIONS = {
 const Carousel = () => {
     const [imgIndex, setImgIndex] = useState<number>(0);
     const dragX = useMotionValue(0);
-
+    const seeProjectsRef = useRef<HTMLHeadingElement>(null);
+    const [autoMove, setAutoMove] = useState(false);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -114,6 +116,23 @@ const Carousel = () => {
         };
     }, [imgIndex]);
 
+    useEffect(() => {
+        if (autoMove) {
+            const interval = setInterval(() => {
+                setImgIndex((prevIndex) => {
+                    const nextIndex = (prevIndex + 1) % projects.length;
+                    if (nextIndex === 0) {
+                        setAutoMove(false);
+                    }
+                    return nextIndex;
+                });
+            }, INTERVAL_DURATION);
+
+            return () => {
+                clearInterval(interval);
+            };
+        }
+    }, [autoMove, setAutoMove]);
 
     const onDragEnd = () => {
         const x = dragX.get();
@@ -124,6 +143,12 @@ const Carousel = () => {
             setImgIndex((prev) => prev - 1);
         }
     };
+
+    const handleSeeProjectsClick = () => {
+        setAutoMove(true);
+        setImgIndex(1);
+    };
+
 
     return (
         <div className="relative overflow-hidden z-[11] sm:px-10 px-5 ">
@@ -136,18 +161,21 @@ const Carousel = () => {
                 onDragEnd={onDragEnd}
                 className="flex cursor-grab items-center active:cursor-grabbing "
             >
-                <Slides imgIndex={imgIndex} />
+                <Slides imgIndex={imgIndex} onSeeProjectsClick={handleSeeProjectsClick} seeProjectsRef={seeProjectsRef} />
             </motion.div>
             <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
         </div>
     )
 }
 
+
 interface ImagesProps {
     imgIndex: number;
+    onSeeProjectsClick: () => void;
+    seeProjectsRef: React.RefObject<HTMLHeadingElement>;
 }
 
-const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
+const Slides: React.FC<ImagesProps> = ({ imgIndex, onSeeProjectsClick, seeProjectsRef }) => {
     return (
         <>
             {projects.map((project: Project, idx: number) => (
@@ -172,7 +200,7 @@ const Slides: React.FC<ImagesProps> = ({ imgIndex }) => {
                                 <p>
                                     Ready to check it out? Scroll down or click below
                                 </p>
-                                <h6 className=" text-orange-text font-bold cursor-pointer">See my Projects -&gt;</h6>
+                                <h6 ref={seeProjectsRef} onClick={onSeeProjectsClick} className=" text-orange-text font-bold cursor-pointer">See my Projects -&gt;</h6>
                             </div>
                         </div>
                         :
