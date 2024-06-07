@@ -5,7 +5,7 @@ import Home from './components/Home/Home'
 import Plus from './assets/Plus.svg'
 import L from './assets/L.svg'
 import './App.css'
-// import Slide from './components/Slide'
+import Loading from './components/Loading'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import { useState, useRef, useEffect } from 'react'
@@ -48,6 +48,7 @@ function Section({ children, id }: SectionProps) {
 function App() {
   const [end, setEnd] = useState<boolean>(false);
   const [current, setCurrent] = useState<string>("Home");
+  const [isLoading, setIsLoading] = useState(true)
 
   const home: HTMLElement | null = document.getElementById('Home1')!;
   const about: HTMLElement | null = document.getElementById('About')!;
@@ -65,8 +66,14 @@ function App() {
       }
     }
     window.addEventListener('scroll', scroll)
+
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+
     return () => {
       window.removeEventListener('scroll', scroll)
+      clearTimeout(timeout)
     }
 
   }, [current]);
@@ -88,6 +95,9 @@ function App() {
     setCurrent('Contact')
   }, { amount: 0.5 })
 
+  if (isLoading) {
+    return <Loading />
+  }
 
   return (
     <>
