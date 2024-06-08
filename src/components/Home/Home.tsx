@@ -8,7 +8,7 @@ type Props = {
 
 const Home = ({ current }: Props) => {
   return (
-    <div className=" text-default-text-color relative mx-[2.5rem] w-full justify-center h-[100vh] bg-transparent z-10 flex items-center">
+    <div className=" text-default-text-color relative sm:mx-[2.5rem] justify-center h-[100vh] bg-transparent z-10 flex items-center">
       <HomeBg />
       <div className="relative z-10 p-4 w-full text-default-text-color flex flex-col justify-center">
         <div className="flex flex-col w-full gap-4">
