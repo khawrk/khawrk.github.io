@@ -123,7 +123,7 @@ function App() {
           <Contact />
         </Section>
         <img src={Plus} alt="" className='fixed bottom-0 left-0 sm:w-[100px] w-[70px] z-20' />
-        {end ? <Link to='Home'><h5 id='footer' className='h-[50px] pb-[1rem] cursor-pointer text-gray-text text-[14px] hover:text-white' onClick={() => setCurrent('Home')}>Back to the top</h5></Link> : <></>}
+        {end ? <Link to='Home' className='z-[101] flex justify-center'><h5 id='footer' className='sm:relative z-[1000] mt-[1rem] mb-[3rem] sm:mt-0 sm:mb-0 h-[50px] pb-[1rem] cursor-pointer text-gray-text text-[14px] hover:text-white' onClick={() => setCurrent('Home')}>Back to the top</h5></Link> : <></>}
         <img src={L} alt="" className="fixed bottom-0 right-0 sm:w-[110px] w-[70px] z-20" />
       </main >
     </>
