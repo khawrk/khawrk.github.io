@@ -4,20 +4,28 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #141416;
+  background-color: #0a0a0b;
   width: 100%;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: #fafafa;
+  overflow-x: hidden;
 }
 
-#icon {
-  width: 30px;
-  height: 30px;
-  background-size: contain;
+/* Selection styling */
+::selection {
+  background-color: rgba(249, 115, 22, 0.3);
+  color: #ffffff;
+}
+
+/* Focus styling */
+:focus-visible {
+  outline: 2px solid rgba(249, 115, 22, 0.5);
+  outline-offset: 2px;
 }

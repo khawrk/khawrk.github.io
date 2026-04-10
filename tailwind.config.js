@@ -7,26 +7,18 @@ export default {
   theme: {
     colors: {
       'white': '#ffffff',
+      'black': '#000000',
       transparent: 'transparent',
-      'dark-bg': '#141416',
-      'orange-text': '#FA8F2C',
-      'gray-text': '#7D8082',
-      'default-text-color': '#EEF7FF'
+      'dark-bg': '#0a0a0b',
+      'orange-text': '#f97316',
+      'gray-text': '#71717a',
+      'default-text-color': '#fafafa'
     },
-    backgroundImage: {
-      'GithubNormal': 'url(/src/assets/github.png)',
-      'GithubHover': 'url(/src/assets/githubHover.png)',
-      "LinkedInNormal": 'url(/src/assets/linkedin.png)',
-      "LinkedInHover": 'url(/src/assets/linkedinHover.png)',
-      "mailNormal": 'url(/src/assets/mail.png)',
-      "mailHover": 'url(/src/assets/mailHover.png)',
-      "stars": 'url(/src/assets/stars.svg)',
-      "lightMode": 'url(src/assets/LightMode.svg)',
-      "darkMode": 'url(src/assets/DarkMode.svg)',
+    extend: {
+      backdropBlur: {
+        md: '12px',
+      },
     },
-    extend: {},
   },
-  lightMode: 'class',
   plugins: [],
 }
-
