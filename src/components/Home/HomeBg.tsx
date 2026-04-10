@@ -1,12 +1,12 @@
 const HomeBg = () => {
     return (
-        <div className="-z-[100] absolute top-0 left-0 w-full h-[100vh] overflow-hidden">
+        <div className="fixed inset-0 -z-[100] w-screen h-screen overflow-hidden">
             <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
             >
                 <source
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dev-gen-video-bWJF3RE7rfWhBD99IdJJxs9i2nkw4h.mp4"
@@ -14,7 +14,7 @@ const HomeBg = () => {
                 />
             </video>
             {/* Dark overlay to ensure text readability */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+            <div className="absolute inset-0 bg-black/40" />
         </div>
     )
 }
