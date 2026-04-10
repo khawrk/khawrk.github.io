@@ -1,49 +1,53 @@
-import AboutBg from "./AboutBg"
-import Slide from "../Slide";
-
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="text-default-text-color relative sm:mx-[2.5rem] h-[100vh] bg-transparent z-10 flex items-center">
-      <AboutBg />
-      <Slide>
-        <div className="relative w-full z-10 p-4 text-default-text-color h-[500px] flex flex-col justify-center gap-2 pt-10 sm:px-[2rem] xl:px-[15rem] pb-[5rem]">
-          <div className="flex xl:justify-end justify-center mt-[5rem] text-gray-text">
-            <p>AKA 0xkhaw in web3 world</p>
-          </div>
-          <div className="flex xl:self-end xl:justify-end justify-center w-full">
-            <h2 id="fullname" className="text-[30px] sm:text-[36px] font-bold sm:self-end">
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">I'</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">m </span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">E</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">m</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">i</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">k</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">a </span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">S</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">u</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">n</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">t</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">i</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">s</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">u</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">m</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">r</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">a</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">n</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">w</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">i</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">l</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">a</span>
-              <span className="hover:text-orange-text transition-all hover:translate-y-[5px] hover:relative hover:top-[-5px] ">i</span>
+    <div className="relative w-full min-h-screen flex items-center justify-center px-6 py-20">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="w-full max-w-3xl mx-auto"
+      >
+        {/* Glass card */}
+        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-12">
+          {/* Header */}
+          <div className="flex flex-col gap-2 mb-8">
+            <span className="text-xs tracking-[0.2em] uppercase text-orange-text">About Me</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              Emika Suntisumranwilai
             </h2>
+            <p className="text-white/50 text-sm">AKA 0xkhaw in the web3 world</p>
           </div>
-          <div className="xl:self-end self-center right-0 flex flex-col gap-5 text-default-text-color sm:text-[16px] text-[14px]">
-            <p className="w-[300px] sm:w-[70%] self-center lg:text-end lg:self-end">I’m a web3 researcher, product manager, and full-stack developer based in Vancouver, Canada.</p>
-            <p className="w-[300px] sm:w-[70%] self-center lg:text-end lg:self-end">Before my career transition to being a developer, I worked as an operation manager, product lead, research analyst, and founded three startups and were part of startup incubator programs such as League of Innovator and FoundersBoost Vancouver.</p>
+
+          {/* Content */}
+          <div className="flex flex-col gap-6 text-white/70 text-sm sm:text-base leading-relaxed">
+            <p>
+              {"I'm a web3 researcher, product manager, and full-stack developer based in Vancouver, Canada."}
+            </p>
+            <p>
+              Before my career transition to being a developer, I worked as an operation manager, product lead, research analyst, and founded three startups. I was part of incubator programs such as League of Innovator and FoundersBoost Vancouver.
+            </p>
+          </div>
+
+          {/* Stats or highlights */}
+          <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-orange-text">3+</div>
+              <div className="text-xs text-white/50 mt-1">Startups Founded</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-orange-text">5+</div>
+              <div className="text-xs text-white/50 mt-1">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-orange-text">10+</div>
+              <div className="text-xs text-white/50 mt-1">Projects Built</div>
+            </div>
           </div>
         </div>
-      </Slide>
+      </motion.div>
     </div>
   )
 }
