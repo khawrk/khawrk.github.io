@@ -9,7 +9,7 @@ const navItems = ['Home', 'About', 'Projects', 'Experience', 'Contact'];
 
 const NavBar = ({ current, setCurrent }: Props) => {
   return (
-    <div className="z-50 hidden sm:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col items-end gap-4">
+    <div className="z-50 hidden sm:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col items-end gap-4 backdrop-blur-sm bg-black/30 rounded-full py-4 px-3">
       {navItems.map((item) => (
         <Link
           key={item}
@@ -27,10 +27,10 @@ const NavBar = ({ current, setCurrent }: Props) => {
             {item}
           </span>
           <div 
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 border ${
               current === item 
-                ? 'bg-orange-text scale-125' 
-                : 'bg-white/30 group-hover:bg-white/60'
+                ? 'bg-orange-text border-orange-text scale-125' 
+                : 'bg-white/40 border-white/50 group-hover:bg-white/70'
             }`}
           />
         </Link>

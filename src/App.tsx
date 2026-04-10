@@ -59,7 +59,7 @@ function VideoBackground() {
           type="video/mp4"
         />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
     </div>
   );
 }
