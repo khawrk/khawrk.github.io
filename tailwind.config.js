@@ -7,11 +7,12 @@ export default {
   theme: {
     colors: {
       'white': '#ffffff',
+      'black': '#000000',
       transparent: 'transparent',
-      'dark-bg': '#141416',
-      'orange-text': '#FA8F2C',
-      'gray-text': '#7D8082',
-      'default-text-color': '#EEF7FF'
+      'dark-bg': '#0a0a0b',
+      'orange-text': '#f97316',
+      'gray-text': '#a1a1aa',
+      'default-text-color': '#fafafa'
     },
     backgroundImage: {
       'GithubNormal': 'url(/src/assets/github.png)',
